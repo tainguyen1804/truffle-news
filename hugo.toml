@@ -1,32 +1,48 @@
-baseURL = "https://tainguyen81.github.io/truffle-news/"
+baseURL = "https://tainguyen1804.github.io/truffle-news/"
 locale = "vi-VN"
-title = "Truffle News — Tin Tức Tổng Hợp"
-theme = "truffle-theme"
-paginate = 12
+title = "Truffle News"
+theme = "PaperMod"
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
 
 [params]
-  description = "Tin tức tổng hợp hàng ngày — công nghệ, đời sống, kinh tế"
+  description = "Tin tức tổng hợp mỗi ngày — công nghệ, đời sống, kinh tế, khoa học"
   author = "PigWorks Group"
-  copyright = "© 2026 PigWorks Group. All rights reserved."
-  logo = "Truffle News"
+  copyright = "© 2026 PigWorks Group"
+  DateFormat = "02/01/2006"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowFullTextinRSS = false
 
-[params.home]
-  featured_limit = 3
-  latest_limit = 12
+  [params.homeInfoParams]
+    Title = "🍄 Truffle News"
+    Content = "Tin tức tổng hợp mỗi ngày — được chọn lọc bởi **PigWorks Group** 🐗"
+
+  [params.profileMode]
+    enabled = false
 
 [menu]
   [[menu.main]]
-    identifier = "home"
-    name = "Trang chủ"
-    url = "/"
+    identifier = "posts"
+    name = "Bài viết"
+    url = "/posts/"
     weight = 1
   [[menu.main]]
     identifier = "categories"
     name = "Chuyên mục"
     url = "/categories/"
     weight = 2
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
 
-[outputFormats]
-  [outputFormats.RSS]
-    mediatype = "application/rss"
-    baseName = "feed"
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -6,6 +6,11 @@ paginate = 10
 enableRobotsTXT = true
 buildDrafts = false
 
+[sitemap]
+  changefreq = "daily"
+  priority = 0.8
+  filename = "sitemap.xml"
+
 # ===== Cover =====
 cover.linkFullImages = true
 cover.responsiveImages = true
@@ -93,8 +98,9 @@ cover.hiddenInSingle = true
 
 # ===== Outputs =====
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
+  page = ["HTML"]
 
 # ===== Search =====
 [outputFormats]

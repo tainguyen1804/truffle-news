@@ -20,12 +20,28 @@ buildDrafts = false
   ShowWordCount = false
   ShowFullTextinRSS = false
 
+  # Google Analytics
+  analytics.google.SiteVerificationTag = "google-site-verification"
+  analytics.google.id = "G-QLG8BZ624J"
+
   [params.homeInfoParams]
     Title = "🍄 Truffle News"
     Content = "Tin tức tổng hợp mỗi ngày — được chọn lọc bởi **PigWorks Group** 🐗"
 
   [params.profileMode]
     enabled = false
+
+  # Giscus Comments
+  [params.giscus]
+    repo = "tainguyen1804/truffle-news"
+    repoId = "R_kgDOSx3Zpg"
+    category = "Announcements"
+    categoryId = "DIC_kwDOSx3Zps4C-j3B"
+    mapping = "pathname"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    theme = "preferred_color_scheme"
+    lang = "vi"
 
 [menu]
   [[menu.main]]

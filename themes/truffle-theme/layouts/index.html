@@ -1,49 +1,34 @@
 {{ define "main" }}
 <section class="hero">
-    <h1>📰 Truffle News</h1>
-    <p class="hero-desc">Tin tức tổng hợp mỗi ngày — được chọn lọc bởi PigWorks Group</p>
+    <h1>🍄 <span>Truffle</span> News</h1>
+    <p class="hero-desc">Tin tức tổng hợp mỗi ngày — công nghệ, đời sống, kinh tế</p>
 </section>
 
-{{ if .Site.RegularPages }}
 <section class="featured-posts">
-    <h2>Bài viết gần đây</h2>
-    <div class="post-grid">
-        {{ $paginator := .Paginator }}
-        {{ range $paginator.Pages }}
+    <h2 class="section-title">Bài viết gần đây</h2>
+    {{ if .Site.RegularPages }}
+        {{ range .Site.RegularPages.ByDate.Reverse }}
         <article class="post-card">
             <div class="post-meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
                 {{ with .Params.categories }}
-                · <span class="post-category">{{ delimit . ", " }}</span>
+                <span class="post-category">{{ index . 0 }}</span>
                 {{ end }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
             </div>
             <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <p class="post-excerpt">{{ .Summary | plainify | truncate 150 }}</p>
+            <div class="post-excerpt">{{ .Summary | plainify | truncate 180 }}</div>
+            {{ with .Params.tags }}
             <div class="post-tags">
-                {{ range .Params.tags }}
-                <span class="tag">#{{ . }}</span>
-                {{ end }}
+                {{ range . }}<span class="tag">#{{ . }}</span>{{ end }}
             </div>
+            {{ end }}
         </article>
         {{ end }}
-    </div>
-</section>
-
-{{ if gt $paginator.TotalPages 1 }}
-<nav class="pagination">
-    {{ with $paginator.Prev }}
-    <a href="{{ .URL }}" class="page-prev">← Trang trước</a>
+    {{ else }}
+        <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <p>Chưa có bài viết nào. Quay lại sau nhé!</p>
+        </div>
     {{ end }}
-    <span class="page-info">Trang {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
-    {{ with $paginator.Next }}
-    <a href="{{ .URL }}" class="page-next">Trang sau →</a>
-    {{ end }}
-</nav>
-{{ end }}
-
-{{ else }}
-<section class="empty-state">
-    <p>Chưa có bài viết. Đợi tí nhé! 🐗</p>
 </section>
-{{ end }}
 {{ end }}

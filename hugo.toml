@@ -6,6 +6,14 @@ paginate = 10
 enableRobotsTXT = true
 buildDrafts = false
 
+# ===== Cover =====
+# Hiển thị ảnh bìa cho bài viết
+cover.linkFullImages = true
+cover.responsiveImages = true
+cover.hiddenInList = false
+cover.hiddenInSingle = true
+
+# ===== Social & SEO =====
 [params]
   description = "Tin tức tổng hợp mỗi ngày — công nghệ, đời sống, kinh tế, khoa học"
   author = "PigWorks Group"
@@ -13,17 +21,30 @@ buildDrafts = false
   DateFormat = "02/01/2006"
   defaultTheme = "auto"
   ShowReadingTime = true
-  ShowShareButtons = false
+  ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
-  ShowWordCount = false
+  ShowWordCount = true
   ShowFullTextinRSS = false
+  ShowRssButtonInSectionTermList = true
+  comments = true
+  hideFooter = false
+
+  # Social icons
+  social = true
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/tainguyen1804/truffle-news"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
 
   # Google Analytics
   analytics.google.SiteVerificationTag = "google-site-verification"
   analytics.google.id = "G-QLG8BZ624J"
 
+  # ===== Home Page Style =====
   [params.homeInfoParams]
     Title = "🍄 Truffle News"
     Content = "Tin tức tổng hợp mỗi ngày — được chọn lọc bởi **PigWorks Group** 🐗"
@@ -31,7 +52,11 @@ buildDrafts = false
   [params.profileMode]
     enabled = false
 
-  # Giscus Comments
+  # ===== Article Card Style =====
+  [params.assets]
+    favicon = "/favicon.ico"
+
+  # ===== Comments =====
   [params.giscus]
     repo = "tainguyen1804/truffle-news"
     repoId = "R_kgDOSx3Zpg"
@@ -43,23 +68,38 @@ buildDrafts = false
     theme = "preferred_color_scheme"
     lang = "vi"
 
+# ===== Menu =====
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Bài viết"
+    name = "📰 Bài viết"
     url = "/posts/"
     weight = 1
   [[menu.main]]
     identifier = "categories"
-    name = "Chuyên mục"
+    name = "🏷️ Chuyên mục"
     url = "/categories/"
     weight = 2
   [[menu.main]]
     identifier = "tags"
-    name = "Tags"
+    name = "🔖 Tags"
     url = "/tags/"
     weight = 3
+  [[menu.main]]
+    identifier = "search"
+    name = "🔍 Tìm"
+    url = "/search/"
+    weight = 4
 
+# ===== Outputs =====
 [outputs]
   home = ["HTML"]
   section = ["HTML", "RSS"]
+
+# ===== Search =====
+[outputFormats]
+  [outputFormats.JSON]
+    baseName = "index"
+    isPlainText = true
+    mediaType = "application/json"
+    notAlternative = true

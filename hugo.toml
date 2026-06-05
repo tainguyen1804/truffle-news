@@ -46,7 +46,7 @@ cover.hiddenInSingle = true
     url = "/index.xml"
 
   # Google Analytics
-  analytics.google.SiteVerificationTag = "google-site-verification"
+  analytics.google.SiteVerificationTag = "2lXsTUNaATJVV03FVUcTQqIC8znHw0BDKG1BpZpRd8g"
   analytics.google.id = "G-QLG8BZ624J"
   [params.homeInfoParams]
     Title = "🍄 Truffle News"

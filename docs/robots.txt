@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://tainguyen1804.github.io/truffle-news/sitemap.xml

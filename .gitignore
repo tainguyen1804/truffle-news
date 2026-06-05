@@ -1,5 +1,4 @@
+docs/
 public/
 .hugo_build.lock
-.DS_Store
-*.swp
-*.swo
+truffle-post.sh

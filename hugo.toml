@@ -48,8 +48,6 @@ cover.hiddenInSingle = true
   # Google Analytics
   analytics.google.SiteVerificationTag = "google-site-verification"
   analytics.google.id = "G-QLG8BZ624J"
-
-  # ===== Home Page Style =====
   [params.homeInfoParams]
     Title = "🍄 Truffle News"
     Content = "Tin tức tổng hợp mỗi ngày — được chọn lọc bởi **PigWorks Group** 🐗"

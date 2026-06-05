@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "feed.xml" | relURL }}">
 </head>
-<body>
+<body class="{{ if .Site.Params.darkMode }}dark-mode{{ end }}">
     <header class="site-header">
         <div class="header-inner">
             <a href="{{ "" | relURL }}" class="logo">🍄 <span>Truffle</span> News</a>

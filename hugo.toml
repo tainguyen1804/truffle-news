@@ -45,4 +45,5 @@ buildDrafts = false
     weight = 3
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML"]
+  section = ["HTML", "RSS"]

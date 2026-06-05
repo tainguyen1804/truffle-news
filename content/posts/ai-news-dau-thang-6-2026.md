@@ -1,6 +1,6 @@
 ---
 title: "Đầu Tháng 6/2026: AI 'Made in Open' Vượt Mặt Closed-Source, Anthropic Định Giá Gần 1 Nghìn Tỷ"
-date: 2026-06-05T20:00:00+07:00
+date: 2026-06-05T10:00:00+07:00
 tags:
   - AI
   - MiniMax

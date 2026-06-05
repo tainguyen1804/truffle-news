@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="single-post">
+    <header class="post-header">
+        <h1>{{ .Title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+            {{ with .Params.categories }}
+            · {{ delimit . ", " }}
+            {{ end }}
+        </div>
+        {{ with .Params.tags }}
+        <div class="post-tags">
+            {{ range . }}<span class="tag">#{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+    </header>
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+    <footer class="post-footer">
+        <a href="/truffle-news/">← Quay lại trang chủ</a>
+    </footer>
+</article>
+{{ end }}

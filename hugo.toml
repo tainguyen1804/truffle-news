@@ -1,0 +1,32 @@
+baseURL = "https://tainguyen81.github.io/truffle-news/"
+locale = "vi-VN"
+title = "Truffle News — Tin Tức Tổng Hợp"
+theme = "truffle-theme"
+paginate = 12
+
+[params]
+  description = "Tin tức tổng hợp hàng ngày — công nghệ, đời sống, kinh tế"
+  author = "PigWorks Group"
+  copyright = "© 2026 PigWorks Group. All rights reserved."
+  logo = "Truffle News"
+
+[params.home]
+  featured_limit = 3
+  latest_limit = 12
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Trang chủ"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "categories"
+    name = "Chuyên mục"
+    url = "/categories/"
+    weight = 2
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"

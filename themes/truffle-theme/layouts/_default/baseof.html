@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="stylesheet" href="/truffle-news/css/style.css">
+    <link rel="alternate" type="application/rss+xml" href="/truffle-news/feed.xml" title="{{ .Site.Title }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-top">
+                <a href="/truffle-news/" class="logo">{{ .Site.Params.logo }}</a>
+                <p class="tagline">{{ .Site.Params.description }}</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                    <li class="nav-categories">
+                        <a href="#">Chuyên mục ▾</a>
+                        <ul class="dropdown">
+                            {{ range site.Taxonomies.categories.ByCount }}
+                            <li><a href="/truffle-news/categories/{{ .Name | urlize }}/">{{ .Name }}</a> ({{ .Count }})</li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>{{ .Site.Params.copyright }}</p>
+            <p class="footer-meta">Proudly powered by PigWorks Group 🐗</p>
+        </div>
+    </footer>
+</body>
+</html>

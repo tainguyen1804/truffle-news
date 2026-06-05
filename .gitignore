@@ -1,1 +1,5 @@
 docs/
+public/
+.hugo_build.lock
+*.log
+.DS_Store

@@ -7,7 +7,6 @@ enableRobotsTXT = true
 buildDrafts = false
 
 # ===== Cover =====
-# Hiển thị ảnh bìa cho bài viết
 cover.linkFullImages = true
 cover.responsiveImages = true
 cover.hiddenInList = false
@@ -30,6 +29,7 @@ cover.hiddenInSingle = true
   ShowRssButtonInSectionTermList = true
   comments = true
   hideFooter = false
+  mainSections = ["posts"]
 
   # Social icons
   social = true
